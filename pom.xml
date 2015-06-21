@@ -1,46 +1,115 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ofbizian</groupId>
-	<artifactId>task-assignment-planner</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>Task Assignment Planner</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.optaplanner</groupId>
-			<artifactId>optaplanner-core</artifactId>
-			<version>6.2.0.Final</version>
-		</dependency>
+    <parent>
+        <groupId>org.jboss.ip.component.management</groupId>
+        <artifactId>ip-parent</artifactId>
+        <version>1.2.1-redhat-2</version>
+    </parent>
+
+    <groupId>com.ofbizian</groupId>
+    <artifactId>drools-hello-world</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Drools Hello World Project</name>
+
+    <repositories>
+        <repository>
+            <id>jboss-ga-repository</id>
+            <url>http://maven.repository.redhat.com/techpreview/all</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>jboss-public-repository</id>
+            <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-ga-plugin-repository</id>
+            <url>http://maven.repository.redhat.com/techpreview/all</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>jboss-public-plugin-repository</id>
+            <url>http://repository.jboss.org/nexus/content/repositories/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.ip.component.management</groupId>
+                <artifactId>ip-dependency-management-all</artifactId>
+                <version>1.2.1-redhat-2</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.component.management</groupId>
+                <artifactId>jboss-dependency-management-all</artifactId>
+                <version>6.1.2.Final-redhat-5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.2</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.0.9</version>
-            <scope>runtime</scope>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
         </dependency>
     </dependencies>
 
     <build>
-        <defaultGoal>clean install exec:java</defaultGoal>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.4.0</version>
-                <configuration>
-                    <mainClass>com.ofbizian.planner.PlannerApp</mainClass>
-                    <arguments>
-                        <argument>-Xms256m</argument>
-                        <argument>-Xmx1024m</argument>
-                        <argument>-server</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
-        </plugins>
+        <!--<defaultGoal>clean install exec:java</defaultGoal>-->
+        <!--<finalName>DroolsHelloWorld</finalName>-->
+
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>exec-maven-plugin</artifactId>-->
+                <!--<version>1.4.0</version>-->
+                <!--<configuration>-->
+                    <!--<mainClass>com.ofbizian.planner.PlannerApp</mainClass>-->
+                    <!--<arguments>-->
+                        <!--<argument>-Xms256m</argument>-->
+                        <!--<argument>-Xmx1024m</argument>-->
+                        <!--<argument>-server</argument>-->
+                    <!--</arguments>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
     </build>
+
 </project>

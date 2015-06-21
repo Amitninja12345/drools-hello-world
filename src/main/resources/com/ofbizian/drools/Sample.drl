@@ -1,0 +1,8 @@
+package com.ofbizian.drools
+
+rule "Hello World"
+	when
+		helloWorldReferenceObject: HelloWorld( printMessage =="Java Honk Drools Hello World!" )
+	then
+		helloWorldReferenceObject.showMessage();
+	end

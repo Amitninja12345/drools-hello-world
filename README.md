@@ -1,1 +1,1 @@
-# task-assigment-planner
+# Drools Hello World Project
