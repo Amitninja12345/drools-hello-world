@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
 
-    <kbase name="defaultKieBase" packages="com.ofbizian.drools.drl">
-        <ksession name="defaultKieBase.session" type="stateful"/>
+    <kbase name="com.ofbizian.drools.drl" packages="com.ofbizian.drools.drl">
+        <ksession name="drlKieBase.session" type="stateful"/>
     </kbase>
 
     <kbase name="com.ofbizian.drools.dsl" packages="com.ofbizian.drools.dsl">

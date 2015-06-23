@@ -1,0 +1,53 @@
+package com.ofbizian.drools.drl
+
+import com.ofbizian.drools.domain.Product;
+import com.ofbizian.drools.domain.ShoppingCart;
+
+declare AssetTotal
+	total: double
+end
+
+rule "Calculate Cart total"
+
+when
+    $cart: ShoppingCart()
+    $item: Product() from $cart.items
+then
+    insert($item);
+    System.out.println("Inserting: " + $item);
+end
+
+rule "Calculate Item"
+
+when
+    $item: Product(code == "ASSET")
+
+then
+    System.out.println("Found " + $item);
+end
+
+
+
+rule "Calculate Item total"
+
+when
+    $nt: Double() from accumulate ( $item: Product(code == "ASSET"), sum($item.getValue()))
+then
+  System.out.println("Number of ticket offers: " + $nt);
+  AssetTotal tOffer = new AssetTotal();
+  tOffer.setTotal($nt);
+  insert(tOffer);
+end
+
+
+
+
+
+rule "Calculate Cart tatal"
+
+when
+    $cart: ShoppingCart()
+      $assetTotal: AssetTotal()
+then
+    System.out.println("Calculating: " + $cart + $assetTotal);
+end
