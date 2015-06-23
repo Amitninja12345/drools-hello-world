@@ -1,0 +1,27 @@
+package com.ofbizian.drools.dsl
+
+import com.ofbizian.drools.domain.Order;
+import com.ofbizian.drools.domain.Country;
+
+expander language.dsl
+
+rule "Orders from Europe need to be risk checked"
+when
+    There is an order
+    with amount under 250
+    that originates from GBR,FRA,DEU
+then
+    ensure order is risk checked
+    Set risk check eligibility to ACCEPT
+end
+
+
+rule "Orders from Europe need to be risk checked 2"
+when
+    There is an order
+    with amount over 250
+    that originates from GBR,FRA,DEU
+then
+    ensure order is risk checked
+    Set risk check eligibility to REFER
+end

@@ -1,1 +1,1 @@
-# Drools Hello World Project
+# Drools Examples

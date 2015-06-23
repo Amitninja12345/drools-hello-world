@@ -1,0 +1,11 @@
+package com.ofbizian.drools.drl
+
+import com.ofbizian.drools.domain.Order
+
+rule "Hello World"
+
+when
+    order: Order( id =="123" )
+then
+    order.setAmount(123.22);
+end
