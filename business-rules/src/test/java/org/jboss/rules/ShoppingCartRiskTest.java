@@ -1,5 +1,6 @@
 package org.jboss.rules;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import com.ofbizian.drools.domain.Product;

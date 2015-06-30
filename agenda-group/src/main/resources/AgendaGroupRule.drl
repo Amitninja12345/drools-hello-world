@@ -1,0 +1,42 @@
+package com.ofbizian.drools.agendagroup
+
+rule "Rule One"
+agenda-group "Group One"
+auto-focus
+salience 100
+    when
+        $person : Person()
+    then
+        System.out.println("FIRE:     11111111");
+end
+
+
+rule "Rule Two"
+agenda-group "Group Two"
+lock-on-active true
+auto-focus
+salience 90
+    when
+        $person : Person()
+    then
+        modify($person){
+            setFirstName("Two")
+        }
+        System.out.println("FIRE:     22222222222");
+        //drools.halt();
+end
+
+rule "Rule Three"
+agenda-group "Group Two"
+no-loop
+lock-on-active true
+
+salience 80
+    when
+        $person : Person()
+    then
+        modify($person){
+            setFirstName("Three")
+        }
+        System.out.println("FIRE:     33333333333");
+end

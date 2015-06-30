@@ -9,7 +9,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
     <artifactId>business-rules</artifactId>
     <packaging>kjar</packaging>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -19,7 +19,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             </plugin>
         </plugins>
     </build>
-    
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -42,61 +42,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <groupId>org.drools</groupId>
             <artifactId>drools-core</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.drools</groupId>-->
-            <!--<artifactId>drools-compiler</artifactId>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.drools</groupId>
             <artifactId>drools-decisiontables</artifactId>
             <version>${brms-version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.drools</groupId>-->
-            <!--<artifactId>drools-templates</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.kie</groupId>-->
-            <!--<artifactId>kie-internal</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.kie</groupId>-->
-            <!--<artifactId>kie-ci</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.thoughtworks.xstream</groupId>-->
-            <!--<artifactId>xstream</artifactId>-->
-            <!--<version>1.4.7</version>-->
-        <!--</dependency>-->
 
-        <!-- for drools compilation -->
-        <!--<dependency>-->
-            <!--<groupId>org.eclipse.jdt.core.compiler</groupId>-->
-            <!--<artifactId>ecj</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.mvel</groupId>-->
-            <!--<artifactId>mvel2</artifactId>-->
-        <!--</dependency>-->
-        
-        <!-- for dtable parsing
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.antlr</groupId>
-            <artifactId>antlr-runtime</artifactId>
-        </dependency>     -->
-        
         <dependency>
             <groupId>com.ofbizian</groupId>
             <artifactId>rule-domain</artifactId>

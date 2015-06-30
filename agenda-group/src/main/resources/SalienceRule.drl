@@ -1,0 +1,57 @@
+package com.ofbizian.drools.agendagroup
+
+rule "Salience 1"
+salience 1
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 1 ");
+        kcontext.getKnowledgeRuntime().getAgenda().getAgendaGroup("Group4").setFocus();
+
+end
+
+rule "Salience 2"
+salience 2
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 2 ");
+end
+
+rule "Salience 2 group 2"
+agenda-group "Group2"
+auto-focus
+salience 2
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 2 in agenda group 2 with focus");
+end
+
+rule "Salience 2.1 again group 2"
+agenda-group "Group2"
+salience 2
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 2.1 in agenda group 2 w/o focus is also activated");
+end
+
+rule "Salience 3 group 3"
+agenda-group "Group3"
+auto-focus
+salience 3
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 3 in agenda group 3");
+end
+
+rule "Salience 4 group 4"
+agenda-group "Group4"
+salience 4
+    when
+        $person : Person()
+    then
+        System.out.println("Salience 4 in agenda group 4 no focus");
+end

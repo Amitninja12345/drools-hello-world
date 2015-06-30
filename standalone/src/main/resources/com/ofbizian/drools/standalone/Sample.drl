@@ -3,7 +3,7 @@ package com.ofbizian.drools.standalone
 rule "Hello World"
 
 when
-    helloWorld: HelloWorld( message =="Hello World!" )
+    helloWorld: HelloWorld( name =="Hello World!" )
 then
     helloWorld.showMessage();
 end

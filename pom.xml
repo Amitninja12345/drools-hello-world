@@ -16,6 +16,7 @@
 
     <modules>
         <module>standalone</module>
+        <module>agenda-group</module>
         <module>rule-domain</module>
         <module>business-rules</module>
     </modules>
@@ -84,6 +85,11 @@
                 <version>6.1.2.Final-redhat-5</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.4</version>
             </dependency>
 
             <dependency>
